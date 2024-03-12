@@ -1,4 +1,8 @@
-# restrictionsEscaper
+# WIP - restrictionsEscaper
+This doesn't work for now.
+
+You might wanna get some commands from there for your own "educational" purposes haha :)
+
 Escape restrictions imposed by your institution using ssh
 
 
