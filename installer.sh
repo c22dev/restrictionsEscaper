@@ -6,11 +6,16 @@ if [ ! -e "$HOME/.restrEscape" ]; then
   curl -L https://raw.githubusercontent.com/c22dev/restrictionsEscaper/main/ch.cclerc.proxystart.plist > ch.cclerc.proxystart.plist
   awk -v home="$HOME" '{gsub("/Users/etudiant", home)} 1' "$HOME/Library/LaunchAgents/ch.cclerc.proxystart.plist" > tmpfile && mv tmpfile "$HOME/Library/LaunchAgents/ch.cclerc.proxystart.plist"
   echo "Installed daemon launcher"
+  curl -L https://raw.githubusercontent.com/c22dev/restrictionsEscaper/main/ch.cclerc.pinger.plist > ch.cclerc.pinger.plist
+  awk -v home="$HOME" '{gsub("/Users/etudiant", home)} 1' "$HOME/Library/LaunchAgents/ch.cclerc.pinger.plist" > tmpfile && mv tmpfile "$HOME/Library/LaunchAgents/ch.cclerc.pinger.plist"
+  echo "Installed daemon pinger"
+  
 fi
 # First of all, let's prepare.
 cd $HOME
 mkdir .restrEscape
 cd .restrEscape
+curl -L https://raw.githubusercontent.com/c22dev/restrictionsEscaper/main/pong.sh > pong.sh
 # We download stuff onto our machine (if absent it'll create it, else it'll delete it)
 curl -L https://raw.githubusercontent.com/c22dev/restrictionsEscaper/main/traffic.sh > traffic.sh
 
