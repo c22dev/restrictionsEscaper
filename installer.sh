@@ -13,4 +13,17 @@ mkdir .restrEscape
 cd .restrEscape
 # We download stuff onto our machine (if absent it'll create it, else it'll delete it)
 curl -L https://raw.githubusercontent.com/c22dev/restrictionsEscaper/main/traffic.sh > traffic.sh
-echo "Done. Please reboot your computer if needed."
+
+echo "--User Config--"
+echo "Please enter your SSH server address:"
+read url
+echo "Please enter your username on this server:"
+read username
+echo "Please enter your password for this user (won't be checked nor encrypted):"
+read password
+
+echo "$url" > server
+echo "$username" > user
+echo "$password" > pass
+
+echo "Done. Please reboot your computer. Opened on port 8080 by default."
